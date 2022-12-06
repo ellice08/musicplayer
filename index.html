@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/font-awesome.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+    />
+    <title>music player pro</title>
+  </head>
+  <body>
+    <audio src="" id="audio-source"></audio>
+
+
+<section class="music-player-section"
+  id="music-player-section">
+ 
+  <img src="images/down.png" class="back-btn icon hide " >
+  <img src="images/nav.png" class="nav-btn icon hide " >
+
+  
+  <div class="music-info">
+
+    <div class="img-container">
+    <img src="images/1.jpeg" alt="music-cover" id="cover" />
+   </div>
+
+   <div class="tittle">
+<h1 class="current-song-name "> song 1</h1>
+<h2 class="artist-name "> artist</h2>
+   
+   </div>
+
+</div>
+  <div class="bottom">
+
+       <div class="progress-container" id="progress-container">
+         <p class="current-time hide ">00 : 00</p>
+        <div class="progress" id="progress"></div>
+        <p class="duration hide">00 : 00</p>
+         </div>
+
+
+    <div class="controls">
+      <button id="prev" class="action-btn">
+        <i class="fas fa-backward active"></i>
+      </button>
+      <button id="play" class="action-btn action-btn-big">
+        <i class="fas fa-play active"></i>
+      </button>
+      <button id="next" class="action-btn">
+        <i class="fas fa-forward active"></i>
+      </button>
+
+   </div>
+
+</section>
+    <section class="home-section">
+      
+      <div class="playlist-group">
+
+        <div class="playlist-card">
+          <img src="images/2.webp" class="playlist-card-img" />
+          <audio src="music/Juice WRLD Ft Benny Blanco - Real Shit.mp3"></audio>
+          <p class="playlist-card-name">track 1</p>
+        </div>
+        <div class="playlist-card">
+          <img src="images/3.jpeg" class="playlist-card-img" />
+          <p class="playlist-card-name">track 1</p>
+        </div>
+        <div class="playlist-card">
+          <img src="images/4.webp" class="playlist-card-img" />
+          <p class="playlist-card-name">track 1</p>
+        </div>
+        <div class="playlist-card">
+          <img src="images/12.jpeg" class="playlist-card-img" />
+          <p class="playlist-card-name">track 1</p>
+        </div>
+        <div class="playlist-card">
+          <img src="images/5.webp" class="playlist-card-img" />
+          <p class="playlist-card-name">track 1</p>
+        </div>
+        <div class="playlist-card">
+          <img src="images/1.jpeg" class="playlist-card-img" />
+          <p class="playlist-card-name">track 1</p>
+        </div>
+        <div class="playlist-card">
+          <img src="images/6.jpeg" class="playlist-card-img" />
+          <p class="playlist-card-name">track 1</p>
+        </div>
+        <div class="playlist-card">
+          <img src="images/11.jpeg" class="playlist-card-img" />
+          <p class="playlist-card-name">track 1</p>
+        </div>
+        <div class="playlist-card">
+          <img src="images/10.jpg" class="playlist-card-img" />
+          <p class="playlist-card-name">track 1</p>
+        </div>
+        <div class="playlist-card">
+          <img src="images/9.jpg" class="playlist-card-img" />
+          <p class="playlist-card-name">track 1</p>
+        </div>
+        <div class="playlist-card">
+          <img src="images/13.jpeg" class="playlist-card-img" />
+          <p class="playlist-card-name">track 1</p>
+        </div>
+        <div class="playlist-card">
+          <img src="images/14.jpeg" class="playlist-card-img" />
+          <p class="playlist-card-name">track 1</p>
+        </div>
+        <div class="playlist-card">
+          <img src="images/15.jpeg" class="playlist-card-img" />
+          <p class="playlist-card-name">track 1</p>
+        </div>
+        <div class="playlist-card">
+          <img src="images/16.jpeg" class="playlist-card-img" />
+          <p class="playlist-card-name">track 1</p>
+        </div>
+      </div>
+    </section>
+    <section class="playlist">
+      <img src="images/back.png" class="back-btn icon" >
+      <h1 class="tittle1"> Track List</h1>
+
+
+        <div class="queue1">
+<!--         
+    <p class="single-song name">${trackList[i].name}</p>
+    <i class="bi bi-music-note-list playlistBtn"></i>
+    <i class="bi bi-heart-half"></i>
+     -->
+ 
+    </section>
+    <section class="favTracks active">
+      <img src="images/back.png" class="back-btn icon" >
+      <h1 class="tittle1"> Favourite Tracks</h1>
+    </section>
+
+  </body>
+  <script src="app.js"></script>
+  <script src="script.js"></script>
+</html>
