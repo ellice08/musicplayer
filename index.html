@@ -17,9 +17,10 @@
   <body>
     <audio src="" id="audio-source"></audio>
 
-
-<section class="music-player-section"
-  id="music-player-section">
+    
+    
+    <section class="music-player-section"
+    id="music-player-section">
  
   <img src="images/down.png" class="back-btn icon hide " >
   <img src="images/nav.png" class="nav-btn icon hide " >
@@ -57,12 +58,15 @@
       <button id="next" class="action-btn">
         <i class="fas fa-forward active"></i>
       </button>
-
-   </div>
+      
+    </div>
+    <i class="bi bi-heart-half" id="favourite"></i>
 
 </section>
-    <section class="home-section">
-      
+
+<section class="home-section">
+  
+
       <div class="playlist-group">
 
         <div class="playlist-card">
@@ -130,16 +134,17 @@
 
 
         <div class="queue1">
-<!--         
+    <!--         
     <p class="single-song name">${trackList[i].name}</p>
     <i class="bi bi-music-note-list playlistBtn"></i>
     <i class="bi bi-heart-half"></i>
      -->
  
     </section>
-    <section class="favTracks active">
+    <section class="favTracks ">
       <img src="images/back.png" class="back-btn icon" >
       <h1 class="tittle1"> Favourite Tracks</h1>
+      <div class="favourite-tracks"></div>
     </section>
 
   </body>

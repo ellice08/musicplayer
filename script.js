@@ -5,8 +5,8 @@ const nextBtn = document.getElementById("next");
 const audio = document.getElementById("audio-source");
 const progress = document.getElementById("progress");
 const progressContainer = document.getElementById("progress-container");
-
 const playlistCreate = document.querySelectorAll(".playlist-group");
+
 // const cover = document.getElementById("cover");
 
 // // Song titles
@@ -124,9 +124,18 @@ const pDiv = document.querySelector(".queue1");
 const backToHome = document.querySelector(".music-player-section .back-btn");
 
 const navBtn = document.querySelector(".music-player-section .nav-btn");
+
 const playlistSection = document.querySelector(".playlist");
 
 const backToMusicContainer = document.querySelector(".playlist .back-btn");
+
+const backToMusicHome = document.querySelector(".favTracks .back-btn");
+
+const favBtn = document.getElementById("favourite");
+// const addToFav = document.querySelector(".playlist  .queue1 .queue .addToFav");
+const addToFav = document.querySelector(".bi-heart-half");
+
+const favSection = document.querySelector(".favTracks");
 
 musicContainer.addEventListener("click", () => {
   if (clickCount >= 2) {
@@ -139,6 +148,15 @@ musicContainer.addEventListener("click", () => {
     clickCount = 1;
   }, 250);
 });
+
+favBtn.addEventListener("click", () => {
+  favSection.classList.add("active");
+});
+
+backToMusicHome.addEventListener("click", () => {
+  favSection.classList.remove("active");
+});
+
 backToHome.addEventListener("click", () => {
   musicContainer.classList.remove("active");
 });
@@ -194,45 +212,42 @@ setInterval(() => {
   currentMusicTime.innerHTML = formatTime(music.currentTime);
 }, 500);
 currentMusicTime.innerHTML = `00 : 00`;
-// queue.forEach((item) => item.classList.remove("active"));
-// queue[currentMusic].classListadd("active");
 
-// queue.forEach((item, i) => {
-//   item.addEventListener("click", () => {
-//     setMusic(i);
-//     playBtn.click();
-//   });
-// });
-
-// const create_playlist = (files) => {
-//   let str;
-//   for (var i = 0; i < files.length; i++) {
-//     str += "<div>" + files[i].name + "</div>";
-//   }
-
-//   playlistCreate.innerHTML = str;
-// };
-// create_playlist();
+let favouritesArray = [];
+let id = 0;
 
 // Display Tracks in playlist
 let counter = 1;
 function displayTracks() {
   for (let i = 0; i < trackList.length; i++) {
-    console.log(trackList[i].name);
+    // console.log(trackList[i].name);
+    id++;
     let div = document.createElement("div");
     div.classList.add("queue");
     div.innerHTML = `
 
-    <p class="single-song name">${trackList[i].name}</p>
-    <i class="bi bi-music-note-list playlistBtn"></i>
-    <i class="bi bi-heart-half"></i>
+    <p class="single-song name" id = ${trackList[i].id}>${trackList[i].name}</p>
+    <i class="bi bi-heart-half addToFav "id = ${trackList[i].id} ></i>
     
     `;
     pDiv.appendChild(div);
+    // console.log(id);
   }
   playFromPlaylist();
 }
+
+function displayFavourites() {
+  const favouriteTracks = document.querySelector(".favourite-tracks");
+  const favourites = trackList.filter((track, i) => track.isFavourite === true);
+  // console.log(favourites);
+  favourites.map((fav) => {
+    let favTracksDiv = document.createElement("div");
+    let songName = document.createElement("p");
+  });
+}
 displayTracks();
+displayFavourites();
+// <i class="bi bi-music-note-list playlistBtn"></i>
 
 // Play song from the playlist
 function playFromPlaylist() {
@@ -249,5 +264,19 @@ function playFromPlaylist() {
   });
 }
 
-let LIST = [];
-let id = 0;
+// const Favourited = done ? Favourited : notFavourited;
+const addToFavorite = () => {
+  addToFav.addEventListener("click", () => {
+    if (clickCount >= 2) {
+      console.log("click");
+      clickCount = 1;
+      return;
+    }
+    favouritesArray.push({
+      name: trackList[i].name,
+      path: trackList[i].path,
+      artist: trackList[i].artist,
+      id: trackList[i].id,
+    });
+  });
+};
